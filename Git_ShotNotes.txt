@@ -1,0 +1,267 @@
+Git:
+----
+	Version Control system  is a tools that helps to track changes in code.
+	A Version Control System (VCS) is software that tracks and manages changes to files, primarily source code, allowing multiple developers to collaborate without overwriting each 	other's work
+	git is a version Control system.is is:
+	popular
+	free & Open Source
+	fast & scalable
+Work done by git:
+------------------
+
+1.Track history of the code 
+2.Collaborate
+
+Github:
+-------
+	Website that allows developers to store and manage their code using git.
+		https://github.com
+	We upload our code in the form of folder. Which is known as Repository(Repo).
+
+Create An Github Account:
+--------------------------
+Before start learning the github we need to create an account on github. so first we will create an git-hub account.
+
+Now create an new repository with any name and you have also an option to give decription and you can control who can see your repo and we can also add README.md file that contains the metadata of the project.
+
+Commits are the basically Changes, that make sure that the any change that is  being done is now confirmed and it is now being saved and its screen shot has been taken.
+
+
+Every time when we make any change in our project we have to commit that changes to reflect in the git repository.
+
+Set-up git:
+-----------
+	It is a version control tool that is must be installed in your system and we can download the git from its official website to work with git we need to also gitBash from the website.
+
+	git --version used to find the verion of git
+
+
+Configuring Git:
+---------------
+	After installation and setup of git now firstly we need to do the config the git meaning of config the git that are telling to the git that in which account we are going to make the changes.
+	git config --global user.name "GitHub-User_Name" //Github user anme.
+	git config --global user.email "rinku5060saini@gmail.com"
+	
+	git config --list:
+		This is check to which username and email we have set
+
+
+
+There are two configs:
+----------------------
+	global/Remote:
+	--------------
+	Means we are talking about the files and the repos that are stored on the git account remotely. 	
+ 	local:
+	------
+	Means we are talking about the files and the repos that are stored in our laptopt or our machine locally
+
+clone:-
+-------
+	Cloning a repository on our local machine means we can create a duplicate repository using the clone command.i.e if we want to want to any github repo to download or copy in our pc/Laptop or machine that we can make a copy of that repo using this command.
+	
+	git clone https://github.com/Rinkukr1/Practice_Demo.git
+
+some basics command of CMD:
+---------------------------
+	1.cd:
+		Basically used to change the directory
+	2.ls:
+		Basically used to check all the files in current directory.
+	3.ls -a:
+		Used to check all files in currect directory also the hidden files.
+status:-
+--------
+	It simpally display the status(state) of the code.
+	To check the state of the code we can simplly write the command:-
+		
+			git status
+	On branch main
+	Your branch is up to date with 'origin/main'.
+
+	nothing to commit, working tree clean
+Now if we make any changes in the clone repo it will not reflect to the github untill we follow the following steps:-
+	1.check status first:
+	---------------------
+		On branch main
+	Your branch is up to date with 'origin/main'.
+
+	Changes not staged for commit:
+ 	 (use "git add <file>..." to update what will be committed)
+ 	 (use "git restore <file>..." to discard changes in working directory)
+       		 modified:   README.md	//stage modified
+
+	Now There is something to commit.
+As we modify our file we need do two things:-
+(a).add
+(b).commit
+
+Now suppose we create a file index.html in the same repo locally the reflect that file on github account we also need to follow some steps:-
+	check status again:
+	-------------------
+		On branch main
+	Your branch is up to date with 'origin/main'.
+
+	Changes not staged for commit:
+  	(use "git add <file>..." to update what will be committed)
+  	(use "git restore <file>..." to discard changes in working directory)
+        	modified:   README.md
+
+	Untracked files:
+  	(use "git add <file>..." to include in what will be committed)
+        	index.html
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+	
+The above status will be show.That file will be Untracked file for github.
+Types of status:
+----------------
+	There are following four types of status:-
+1.untracked:
+------------
+	New files that git does't yet track.
+2.modified:
+-----------
+	changed the file and not updated yet
+3.staged:
+---------
+	file is ready to be committed.After being addded the file become staged.a
+4.unmodified:
+-------------
+	unchanged.When we make commit then they become unchanged.
+
+
+git basic commands:
+-------------------
+1.add:-
+-----
+	adds new or changed files in your working directory to the git staging area.
+		git add <-file name->
+
+This will make the file stage means after using the command add our file will be ready to be commited.
+
+now status:
+----------
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed: //Now file is no more untracked
+  (use "git restore --staged <file>..." to unstage)
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+git add . is used when we have more then one file to be added.
+now status:
+-----------
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed: //now the files are ready to be committed
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+        new file:   index.html
+
+2.commit:
+---------
+	It is the record of changes.
+
+		git commit -m "some message"
+now status:
+-----------
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit. //new file index.html is still not 								reflect on the github
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+3.push:
+-------
+	push upload local repo/file content to remote repo.Basically we use push command to send the changes(files) from local to remote.
+
+ 		git push origin main
+
+
+Now the all changes including file will reflect on the github account.
+
+origin:
+-------
+	This the name/link of repo.
+-------------------------------------------------------------------------------------------
+Now we will talk about how to upload the entire code from our machine to github using git.
+
+Some basic command that are used:-
+---------------------------------
+1.init:-
+--------
+	This command is used to create a new git repo.
+		git init
+		git add .
+		git commit -m "committed"
+		git remote add origin <-link-> //It is used to take the reference of github 							repo address
+		git remote -v (to verify remote) // check repo address
+		git branch (to check branch) // Check Branch
+		git branch -M main (to rename branch) // To rename the branch
+		git push origin main
+
+
+First we will create a new folder and one that folder into cmd and write command git init.
+
+Now the repo will reflect remotely now if we make any changes or create new files in that repo now we have to follow the above steps till the commit after that will follow the following steps:-
+
+
+	1.git remote add origin <-link->:
+	----------------------------------
+	2.git push origin main
+	-----------------------
+		
+Git Branch Commands:
+--------------------
+1.git branch:
+-------------
+	This command is used to check the current branch.
+
+2.git branch -M main:
+----------------------
+	This command is used to rename the branch with given name.
+3.git checkout <-branch name->:
+-------------------------------
+	This command is used  when we want to go from one branch to another branch that's name is mentioned.
+4.git checkout -b <-new branch name->:
+--------------------------------------
+	This command is used to create a new branch.
+5.git branch -d <-branch name->:
+-------------------------------
+	This command is used to delete the command.
+
+Merging Code of different branches:
+------------------------------------
+way 1:
+-----
+	git diif <-branch anme->:
+	------------------------
+		This command is used to compare the two branches features.
+	git merge <-branch name->:
+	--------------------------
+		This command will merge the current branch with the mentioned branch.
+	
+Merging using GitHub:
+--------------------
+	First we will create a PR(Pull request) that lets tell others about changes you ahve pushed to a branch in a repository on GitHub.	
+
+Pull Command:
+-------------
+	git pull origin main
+
+used to fetch and download content from a remote repo and immeditaly update the local repo to match that content.
+
+Resolving Merge Conflicts:
+--------------------------
+	An event that  takes place when Git is unable to automatically resolve differences in code between two commits.
+
+
